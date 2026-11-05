@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Indie MRR Board / 公开收入观察：整理 TrustMRR 公开验证收入榜，并说明收银台反查方法与局限。非官方镜像。" />
+  <title>公开收入观察 · Indie MRR Board</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%235b8cff'/%3E%3Cstop offset='1' stop-color='%2322d3a6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' font-family='sans-serif' font-weight='700' fill='%23041018'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <div class="logo">观</div>
+        <div class="brand-text">
+          <strong>公开收入观察</strong>
+          <span>Indie MRR Board</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#board">收入榜</a>
+        <a href="#method">方法说明</a>
+        <a href="#checkout">收银台反查</a>
+        <a href="#disclaimer">免责声明</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">公开 · 可核验 · 非官方</div>
+          <h1>高收入独立站 / SaaS<br />公开收入观察板</h1>
+          <p class="lead">
+            本站整理 <strong>TrustMRR</strong> 公开首页上的验证 MRR 排行，方便浏览、搜索与按增长排序。
+            收入数字由创始人接入收款账户后公开，不等于「收银台流量反查」结果。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#board">查看 Top 50 榜单</a>
+            <a class="btn" href="#method">了解数据怎么来的</a>
+          </div>
+        </div>
+        <aside class="stat-card" aria-label="榜单摘要">
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="label">收录条目</div>
+              <div class="value" id="stat-count">—</div>
+            </div>
+            <div class="stat">
+              <div class="label">榜首 MRR</div>
+              <div class="value" id="stat-top">—</div>
+            </div>
+            <div class="stat">
+              <div class="label">中位 MRR</div>
+              <div class="value" id="stat-median">—</div>
+            </div>
+            <div class="stat">
+              <div class="label">环比</div>
+              <div class="value" id="stat-growth">—</div>
+            </div>
+          </div>
+          <div class="note-box">
+            抓取日期：<strong id="fetched-at">—</strong>（Asia/Singapore）· 来源 TrustMRR 公开页
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="board">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>TrustMRR 公开 MRR 排行榜</h2>
+            <p id="source-note">数据来自 TrustMRR 公开首页榜单。</p>
+          </div>
+          <div class="badge" id="result-count">加载中…</div>
+        </div>
+
+        <div class="controls">
+          <input id="search" type="search" placeholder="搜索产品名、简介或创始人…" aria-label="搜索榜单" />
+          <select id="sort" aria-label="排序方式">
+            <option value="rank">按原站排名</option>
+            <option value="mrr_desc">MRR 从高到低</option>
+            <option value="mrr_asc">MRR 从低到高</option>
+            <option value="growth_desc">环比增长从高到低</option>
+            <option value="growth_asc">环比增长从低到高</option>
+            <option value="name">按名称</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th>产品</th>
+                <th>创始人</th>
+                <th>MRR (USD)</th>
+                <th>环比</th>
+                <th>来源</th>
+              </tr>
+            </thead>
+            <tbody id="rank-body">
+              <tr><td colspan="6" class="empty">正在加载…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>方法说明</h2>
+            <p>弄清「公开验证收入」和「收银台流量反查」是两回事。</p>
+          </div>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="pill">路径 A · 本站已用</div>
+            <h3>TrustMRR 公开验证收入</h3>
+            <p>创始人把 Stripe / Paddle 等收款账户接到 TrustMRR，平台展示经核对的 MRR / 收入。</p>
+            <ul>
+              <li>优点：相对可信，可点进原站核对。</li>
+              <li>局限：只覆盖<strong>愿意公开</strong>的项目；匿名条目信息不完整。</li>
+              <li>本站 Top50 来自 TrustMRR 公开首页快照，非实时 API。</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="pill">路径 B · 扩展位</div>
+            <h3>Similarweb 收银台域名反查</h3>
+            <p>用流量分析工具查看 Stripe Checkout、Gumroad、Lemon Squeezy、Polar、Creem、Whop 等收款域名的<strong>引荐站点</strong>，推断谁在大量打开付费页。</p>
+            <ol>
+              <li>选定收银台域名（如 <code>checkout.stripe.com</code> 等）。</li>
+              <li>在 Similarweb 看 Referring Sites / 引荐流量。</li>
+              <li>整理长尾名单（完整名单通常需要 Similarweb 付费）。</li>
+            </ol>
+            <p><strong>重要：</strong>付费页访问量 ≠ 实际收入；广告、试用、退款、试用转化都会扭曲判断。</p>
+          </article>
+          <article class="card">
+            <div class="pill">路径 C · 人工</div>
+            <h3>发家路径整理</h3>
+            <p>访谈、博客、播客、公开财报碎片等仍需人工整理，本站暂不收录故事正文，只留方法提示，避免编造案例。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkout">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>收银台反查榜（预留）</h2>
+            <p>需要 Similarweb Pro 导出或 API 后导入；当前为空壳。</p>
+          </div>
+        </div>
+        <div class="placeholder">
+          <p>
+            数据文件预留为 <code>data/checkout_referrals.json</code>。
+            结构示例（空数组 + schema 注释）已放在仓库中，导入真实 CSV/JSON 后即可扩展本区块。
+          </p>
+          <pre class="pre">{
+  "fetched_at": null,
+  "items": []
+  // 期望字段: rank, site, checkout_provider,
+  // referral_visits_estimate, notes
+}</pre>
+          <p style="margin-top:0.9rem;color:var(--muted);font-size:0.92rem;">
+            本站<strong>不会</strong>镜像第三方商业榜单文案或整站数据；也不会在前端硬编码任何 Similarweb / 第三方 API Key。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="disclaimer">
+    <div class="container">
+      <p>
+        <strong>数据来源：</strong>
+        <a href="https://trustmrr.com/" target="_blank" rel="noopener noreferrer">TrustMRR</a>
+        公开首页 · 抓取日期 <span id="fetched-at-footer">2026-11-05</span>（Asia/Singapore）
+      </p>
+      <p>
+        本站名称「公开收入观察 / Indie MRR Board」为自建演示，<strong>不是</strong> TrustMRR 官方产品，也与任何商业「闷声发财」类榜单无关。
+        榜单链接指向 TrustMRR 原站条目，便于核对。
+      </p>
+      <div class="disclaimer">
+        免责声明：数字仅供学习与观察，可能滞后、不完整或被原站更新。MRR 不等于利润；收银台流量不等于收入。
+        投资、创业决策请自行核实一手来源。本站不对数据准确性作任何保证。
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

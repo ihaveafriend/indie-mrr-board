@@ -1,0 +1,509 @@
+{
+  "title": "公开收入榜（TrustMRR）",
+  "fetched_at": "2026-11-05",
+  "timezone": "Asia/Singapore",
+  "source": "https://trustmrr.com/",
+  "note": "数据来自 TrustMRR 公开首页榜单，收入由创始人接入收款账户后验证。匿名/私密条目按原站展示。本站为自建演示，非 TrustMRR 官方镜像。",
+  "items": [
+    {
+      "rank": 1,
+      "name": "Stan",
+      "description": "Stan enables people to make living and work for themselves.",
+      "founder": "Vitalii Dodonov",
+      "mrr_usd": 3569654,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/startup/stan",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 2,
+      "name": "GojiberryAI",
+      "description": "AI-powered GTM platform for B2B high-intent prospects",
+      "founder": "romàn czerny",
+      "mrr_usd": 424368,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/startup/gojiberryai",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 3,
+      "name": "Postiz",
+      "description": "Agentic social media scheduler",
+      "founder": "Nevo David",
+      "mrr_usd": 368905,
+      "mom_growth_pct": 51,
+      "source_url": "https://trustmrr.com/startup/postiz",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 4,
+      "name": "1Lookup",
+      "description": "Validate phone, email and IP data via one API",
+      "founder": "Robby Frank",
+      "mrr_usd": 273140,
+      "mom_growth_pct": 12,
+      "source_url": "https://trustmrr.com/startup/1lookup",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 5,
+      "name": "Anonymous Startup",
+      "description": "未公开名称",
+      "founder": "Andrei Orsich",
+      "mrr_usd": 267668,
+      "mom_growth_pct": 22,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 6,
+      "name": "Private Venture",
+      "description": "B2B workforce-management SaaS",
+      "founder": "david",
+      "mrr_usd": 248283,
+      "mom_growth_pct": 1,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 7,
+      "name": "Rezi",
+      "description": "Resume builder (~1M new users/year)",
+      "founder": "Jacob Jacquet",
+      "mrr_usd": 241149,
+      "mom_growth_pct": 4,
+      "source_url": "https://trustmrr.com/startup/rezi",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 8,
+      "name": "Kibu",
+      "description": "EHR/content/compliance for I/DD provider orgs",
+      "founder": "Daniel Caridi",
+      "mrr_usd": 234319,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/startup/kibu",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 9,
+      "name": "Stealth Venture",
+      "description": "未公开名称",
+      "founder": "Simon",
+      "mrr_usd": 212566,
+      "mom_growth_pct": 3,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 10,
+      "name": "Cometly",
+      "description": "Marketing attribution analytics for SaaS",
+      "founder": "Grant Cooper",
+      "mrr_usd": 197248,
+      "mom_growth_pct": 3,
+      "source_url": "https://trustmrr.com/startup/cometly",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 11,
+      "name": "AEO Engine",
+      "description": "AI SEO agency for AI Overviews / ChatGPT / Google",
+      "founder": "Vijay Jacob",
+      "mrr_usd": 187116,
+      "mom_growth_pct": 37,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 12,
+      "name": "Supliful / Brand On Demand",
+      "description": "Creator CPG brand launch + fulfillment platform",
+      "founder": "Martins Lasmanis",
+      "mrr_usd": 177533,
+      "mom_growth_pct": 1,
+      "source_url": "https://trustmrr.com/startup/supliful",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 13,
+      "name": "Anonymous Startup",
+      "description": "UK hormone prescribing + ops consulting",
+      "founder": "Haych",
+      "mrr_usd": 170615,
+      "mom_growth_pct": 2,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 14,
+      "name": "Hidden Business",
+      "description": "未公开名称",
+      "founder": "Killian",
+      "mrr_usd": 170512,
+      "mom_growth_pct": 0,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 15,
+      "name": "Confidential Startup",
+      "description": "Language learning: live tutoring + AI speaking",
+      "founder": "ht",
+      "mrr_usd": 156719,
+      "mom_growth_pct": 8,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 16,
+      "name": "Stealth Company",
+      "description": "未公开名称",
+      "founder": "Saad",
+      "mrr_usd": 135899,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 17,
+      "name": "PROSP",
+      "description": "Automate LinkedIn outreach with AI",
+      "founder": "Yann",
+      "mrr_usd": 128005,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/startup/prosp",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 18,
+      "name": "Windmill Growth",
+      "description": "Marketing services for personal brands",
+      "founder": "Ben Buaron",
+      "mrr_usd": 123196,
+      "mom_growth_pct": 0,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 19,
+      "name": "Upscale System",
+      "description": "CRM and lead generation software",
+      "founder": "Warm Inboxes",
+      "mrr_usd": 118265,
+      "mom_growth_pct": 16,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 20,
+      "name": "PropGPT",
+      "description": "AI sports betting props analysis app",
+      "founder": "Eyal Cohen",
+      "mrr_usd": 105904,
+      "mom_growth_pct": 25,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 21,
+      "name": "Unnamed Company",
+      "description": "未公开名称",
+      "founder": "Eric Smith",
+      "mrr_usd": 91956,
+      "mom_growth_pct": 9,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 22,
+      "name": "Stealth Company",
+      "description": "未公开名称",
+      "founder": "MaxTalksTech",
+      "mrr_usd": 90678,
+      "mom_growth_pct": 19,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 23,
+      "name": "Codédex",
+      "description": "Gamified coding adventure learning",
+      "founder": "Sonny Li",
+      "mrr_usd": 81096,
+      "mom_growth_pct": 5,
+      "source_url": "https://trustmrr.com/startup/codedex",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 24,
+      "name": "Supergrow",
+      "description": "未详述",
+      "founder": "Deven",
+      "mrr_usd": 79479,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/startup/supergrow",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 25,
+      "name": "LLM Gateway",
+      "description": "Open-source API gateway for LLMs",
+      "founder": "LLM Gateway",
+      "mrr_usd": 78764,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 26,
+      "name": "Confidential Startup",
+      "description": "One-click documentary videos for YouTube automation",
+      "founder": "Iker",
+      "mrr_usd": 73412,
+      "mom_growth_pct": 65,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 27,
+      "name": "Private Venture",
+      "description": "未公开名称",
+      "founder": "Kevin Yubin",
+      "mrr_usd": 70104,
+      "mom_growth_pct": 1,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 28,
+      "name": "Promptwise",
+      "description": "Generative AI video/image/audio SaaS",
+      "founder": "Mateo Starcevic",
+      "mrr_usd": 66778,
+      "mom_growth_pct": 23,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 29,
+      "name": "Speel.co",
+      "description": "AI UGC-style videos and images for ads",
+      "founder": "Yann",
+      "mrr_usd": 65244,
+      "mom_growth_pct": 1,
+      "source_url": "https://trustmrr.com/startup/speel",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 30,
+      "name": "White Glove Content",
+      "description": "Subscription faceless video production",
+      "founder": "Dylan N.",
+      "mrr_usd": 64154,
+      "mom_growth_pct": 8,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 31,
+      "name": "Podawaa",
+      "description": "LinkedIn publish, grow, analytics",
+      "founder": "Tom Benattar",
+      "mrr_usd": 62255,
+      "mom_growth_pct": 5,
+      "source_url": "https://trustmrr.com/startup/podawaa",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 32,
+      "name": "OmegleWeb",
+      "description": "Omegle alternative random video/text chat",
+      "founder": "OmegleWeb",
+      "mrr_usd": 60949,
+      "mom_growth_pct": 27,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 33,
+      "name": "Dropkiller",
+      "description": "E-com product insights and ad creatives",
+      "founder": "-",
+      "mrr_usd": 60179,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 34,
+      "name": "Project A",
+      "description": "AI fortune-telling / astrology app",
+      "founder": "ST",
+      "mrr_usd": 59700,
+      "mom_growth_pct": 0,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 35,
+      "name": "Hidden Business",
+      "description": "巴西业务",
+      "founder": "Renan Hiramatsu",
+      "mrr_usd": 57404,
+      "mom_growth_pct": 3,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 36,
+      "name": "RankAI",
+      "description": "Autonomous search visitors from Google & ChatGPT",
+      "founder": "Dylan",
+      "mrr_usd": 56533,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 37,
+      "name": "GoTall",
+      "description": "Superwall iOS application",
+      "founder": "Chenglin",
+      "mrr_usd": 56124,
+      "mom_growth_pct": 4,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 38,
+      "name": "Adspirer",
+      "description": "AI paid media agent across ad platforms",
+      "founder": "Abhilash Mekala",
+      "mrr_usd": 54684,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 39,
+      "name": "Boothie",
+      "description": "AI photo editor iOS/Android",
+      "founder": "Keremcan Şeker",
+      "mrr_usd": 54079,
+      "mom_growth_pct": 26,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 40,
+      "name": "DataExpert",
+      "description": "Data engineering education",
+      "founder": "Zach Wilson",
+      "mrr_usd": 53115,
+      "mom_growth_pct": 6,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 41,
+      "name": "Laper",
+      "description": "Creative OS for screenwriters / storyboard",
+      "founder": "Laper",
+      "mrr_usd": 51361,
+      "mom_growth_pct": 26,
+      "source_url": "https://trustmrr.com/startup/laper",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 42,
+      "name": "traxy.ai",
+      "description": "Lead lists from social listening",
+      "founder": "Ben Buaron",
+      "mrr_usd": 51129,
+      "mom_growth_pct": 5,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 43,
+      "name": "Vid.AI",
+      "description": "Idea/script to ready-to-post videos",
+      "founder": "Priyam Raj",
+      "mrr_usd": 50442,
+      "mom_growth_pct": 3,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 44,
+      "name": "POST BRIDGE",
+      "description": "Post to multiple social platforms at once",
+      "founder": "jack friks",
+      "mrr_usd": 49553,
+      "mom_growth_pct": 2,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 45,
+      "name": "VirtualJK",
+      "description": "Replicant of James Kemp for offer/campaigns",
+      "founder": "James Kemp",
+      "mrr_usd": 48492,
+      "mom_growth_pct": null,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 46,
+      "name": "Nutria",
+      "description": "AI Calorie Tracker",
+      "founder": "-",
+      "mrr_usd": 46830,
+      "mom_growth_pct": 0,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 47,
+      "name": "Stealth Venture",
+      "description": "Faceless channel growth with AI videos",
+      "founder": "Shivansh Mehendiratta",
+      "mrr_usd": 46727,
+      "mom_growth_pct": 13,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 48,
+      "name": "Conductor",
+      "description": "QuickBooks Desktop & Enterprise API",
+      "founder": "Danny Nemer",
+      "mrr_usd": 46624,
+      "mom_growth_pct": 13,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 49,
+      "name": "Rank Prompt",
+      "description": "AEO: how you show up on AI search engines",
+      "founder": "Tomy",
+      "mrr_usd": 44848,
+      "mom_growth_pct": 10,
+      "source_url": "https://trustmrr.com/",
+      "source": "TrustMRR"
+    },
+    {
+      "rank": 50,
+      "name": "Web3Forms",
+      "description": "Contact form API for modern websites",
+      "founder": "Surjith S M",
+      "mrr_usd": 44081,
+      "mom_growth_pct": 6,
+      "source_url": "https://trustmrr.com/startup/web3forms",
+      "source": "TrustMRR"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "_schema_comment": "收银台反查榜数据文件。用 Similarweb Pro 导出各收款域名的 Top Referring Sites 后填入。空数组表示尚未导入。",
+  "_schema": {
+    "fetched_at": "YYYY-MM-DD",
+    "method": "Similarweb referral traffic to checkout domains (Stripe / Gumroad / Lemon Squeezy / Polar / Creem / Whop, etc.)",
+    "limitation": "付费页访问量 ≠ 收入；长尾域名需付费 Similarweb。",
+    "items": [
+      {
+        "rank": 1,
+        "site": "example.com",
+        "checkout_provider": "stripe",
+        "referral_visits_estimate": 0,
+        "notes": "示例条目，部署前请删除或替换"
+      }
+    ]
+  },
+  "fetched_at": null,
+  "items": []
+}
