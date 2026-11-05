@@ -29,7 +29,17 @@
     drawer: document.getElementById("drawer"),
     drawerBackdrop: document.getElementById("drawer-backdrop"),
     drawerClose: document.getElementById("drawer-close"),
+    headerCounterValue: document.getElementById("header-counter-value"),
   };
+
+  const HEADER_COUNTER_OFFSET = 104131;
+
+  function updateHeaderCounter(caseCount) {
+    if (!els.headerCounterValue) return;
+    const n = Number(caseCount);
+    const base = Number.isFinite(n) && n >= 0 ? n : 0;
+    els.headerCounterValue.textContent = String(base + HEADER_COUNTER_OFFSET);
+  }
 
   function escapeHtml(str) {
     return String(str ?? "")
@@ -149,9 +159,11 @@
     if (!items.length) {
       els.casesList.innerHTML = `<p class="empty">暂无案例，稍后再来。</p>`;
       if (els.casesCount) els.casesCount.textContent = "0 条";
+      updateHeaderCounter(0);
       return;
     }
     if (els.casesCount) els.casesCount.textContent = `${items.length} 条`;
+    updateHeaderCounter(items.length);
     els.casesList.innerHTML = items
       .map((item) => {
         const href = item.url || "#";
@@ -184,6 +196,7 @@
     } catch (err) {
       els.casesList.innerHTML = `<p class="empty">加载案例失败：${escapeHtml(err.message)}</p>`;
       if (els.casesCount) els.casesCount.textContent = "失败";
+      updateHeaderCounter(0);
     }
   }
 

@@ -118,6 +118,39 @@ select:focus-visible {
 .brand-text strong { display: block; font-size: 1rem; color: var(--cream); }
 .brand-text span { display: block; font-size: 0.75rem; color: var(--muted); }
 
+.nav-right {
+  display: flex; align-items: center; margin-left: auto;
+  flex-shrink: 0;
+}
+.header-counter {
+  display: inline-flex; align-items: baseline; gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(58, 161, 216, 0.35);
+  background: rgba(58, 161, 216, 0.1);
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.header-counter-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+.header-counter-value {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: var(--cream);
+}
+@media (max-width: 420px) {
+  .header-counter { padding: 0.3rem 0.55rem; gap: 0.3rem; }
+  .header-counter-label { font-size: 0.62rem; }
+  .header-counter-value { font-size: 0.85rem; }
+}
+
 .drawer-backdrop {
   position: fixed; inset: 0; z-index: 40;
   background: rgba(0, 0, 0, 0.55);
