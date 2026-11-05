@@ -23,6 +23,12 @@
     statTop: document.getElementById("stat-top"),
     statMedian: document.getElementById("stat-median"),
     statGrowth: document.getElementById("stat-growth"),
+    casesList: document.getElementById("cases-list"),
+    casesCount: document.getElementById("cases-count"),
+    menuToggle: document.getElementById("menu-toggle"),
+    drawer: document.getElementById("drawer"),
+    drawerBackdrop: document.getElementById("drawer-backdrop"),
+    drawerClose: document.getElementById("drawer-close"),
   };
 
   function escapeHtml(str) {
@@ -52,6 +58,136 @@
     return a.length % 2 ? a[mid] : (a[mid - 1] + a[mid]) / 2;
   }
 
+  /* ---------- drawer ---------- */
+  let lastFocus = null;
+
+  function getDrawerFocusables() {
+    if (!els.drawer) return [];
+    return Array.from(
+      els.drawer.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => !el.hasAttribute("disabled") && el.offsetParent !== null);
+  }
+
+  function openDrawer() {
+    if (!els.drawer || !els.menuToggle) return;
+    lastFocus = document.activeElement;
+    els.drawer.classList.add("is-open");
+    els.drawer.setAttribute("aria-hidden", "false");
+    els.menuToggle.setAttribute("aria-expanded", "true");
+    els.menuToggle.setAttribute("aria-label", "关闭菜单");
+    if (els.drawerBackdrop) els.drawerBackdrop.hidden = false;
+    document.body.classList.add("drawer-open");
+    const focusables = getDrawerFocusables();
+    (focusables[0] || els.drawerClose || els.drawer).focus();
+  }
+
+  function closeDrawer() {
+    if (!els.drawer || !els.menuToggle) return;
+    els.drawer.classList.remove("is-open");
+    els.drawer.setAttribute("aria-hidden", "true");
+    els.menuToggle.setAttribute("aria-expanded", "false");
+    els.menuToggle.setAttribute("aria-label", "打开菜单");
+    if (els.drawerBackdrop) els.drawerBackdrop.hidden = true;
+    document.body.classList.remove("drawer-open");
+    if (lastFocus && typeof lastFocus.focus === "function") {
+      lastFocus.focus();
+    } else {
+      els.menuToggle.focus();
+    }
+  }
+
+  function isDrawerOpen() {
+    return els.drawer && els.drawer.classList.contains("is-open");
+  }
+
+  function setupDrawer() {
+    if (!els.menuToggle || !els.drawer) return;
+
+    els.menuToggle.addEventListener("click", () => {
+      if (isDrawerOpen()) closeDrawer();
+      else openDrawer();
+    });
+
+    if (els.drawerClose) {
+      els.drawerClose.addEventListener("click", closeDrawer);
+    }
+    if (els.drawerBackdrop) {
+      els.drawerBackdrop.addEventListener("click", closeDrawer);
+    }
+
+    els.drawer.querySelectorAll("a[href]").forEach((link) => {
+      link.addEventListener("click", () => closeDrawer());
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!isDrawerOpen()) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeDrawer();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const focusables = getDrawerFocusables();
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  /* ---------- cases ---------- */
+  function renderCases(items) {
+    if (!els.casesList) return;
+    if (!items.length) {
+      els.casesList.innerHTML = `<p class="empty">暂无案例，稍后再来。</p>`;
+      if (els.casesCount) els.casesCount.textContent = "0 条";
+      return;
+    }
+    if (els.casesCount) els.casesCount.textContent = `${items.length} 条`;
+    els.casesList.innerHTML = items
+      .map((item) => {
+        const href = item.url || "#";
+        const title = escapeHtml(item.title || "未命名案例");
+        const source = escapeHtml(item.source || "");
+        const added = escapeHtml(item.added_at || "");
+        const summary = item.summary
+          ? `<p class="case-summary">${escapeHtml(item.summary)}</p>`
+          : "";
+        return `<article class="case-card">
+          <h3><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
+          <div class="case-meta">
+            ${source ? `<span class="source">${source}</span>` : ""}
+            ${added ? `<span>收录 ${added}</span>` : ""}
+          </div>
+          ${summary}
+        </article>`;
+      })
+      .join("");
+  }
+
+  async function loadCases() {
+    if (!els.casesList) return;
+    try {
+      const res = await fetch("./data/cases.json", { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+      renderCases(items);
+    } catch (err) {
+      els.casesList.innerHTML = `<p class="empty">加载案例失败：${escapeHtml(err.message)}</p>`;
+      if (els.casesCount) els.casesCount.textContent = "失败";
+    }
+  }
+
+  /* ---------- board ---------- */
   function filtered() {
     const q = state.query.trim().toLowerCase();
     let rows = state.items.slice();
@@ -138,7 +274,7 @@
     if (els.sourceNote) els.sourceNote.textContent = state.meta.note || "";
   }
 
-  async function boot() {
+  async function bootBoard() {
     try {
       const res = await fetch("./data/trustmrr_top50.json", { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -152,14 +288,20 @@
     }
   }
 
-  els.search.addEventListener("input", (e) => {
-    state.query = e.target.value;
-    render();
-  });
-  els.sort.addEventListener("change", (e) => {
-    state.sort = e.target.value;
-    render();
-  });
+  if (els.search) {
+    els.search.addEventListener("input", (e) => {
+      state.query = e.target.value;
+      render();
+    });
+  }
+  if (els.sort) {
+    els.sort.addEventListener("change", (e) => {
+      state.sort = e.target.value;
+      render();
+    });
+  }
 
-  boot();
+  setupDrawer();
+  loadCases();
+  bootBoard();
 })();
