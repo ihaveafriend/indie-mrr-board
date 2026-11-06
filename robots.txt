@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ihaveafriend.github.io/indie-mrr-board/sitemap.xml
